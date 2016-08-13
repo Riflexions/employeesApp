@@ -1,0 +1,21 @@
+{{#each model as |department|}}
+    <h1>
+        Department: {{department.name}}
+    </h1>
+    <h4>
+        Employees:
+        <ul>
+            {{#each department.employees as |employee|}}
+                <li>
+                    {{employee.firstname}}
+                </li>
+            {{/each}}
+        </ul>
+    </h4>
+{{/each}}
+
+<br>
+<br>
+<br>
+
+{{create-department onCreate=(action 'create')}}
